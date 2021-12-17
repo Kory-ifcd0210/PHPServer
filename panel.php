@@ -1,0 +1,39 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet" >
+    <title>Document</title>
+</head>
+<body>
+    <section class="form-holder">
+<h1>Admin Panel</h1>
+<?php
+if (!isset ($_SESSION['usermail'])){
+    ?>
+    <figure>
+    <img src="https://i.stack.imgur.com/2BvbQ.jpg" alt="You Shall not pass">
+    <figcaption>You are not logged</figcaption>
+</figure>
+<?php
+} else{
+    ?>
+    <h2> Welcome: <?php echo $_SESSION['usermail'] ?></h2>
+    <figure>
+        <img src="https://c.tenor.com/lPjVxg0BXJ4AAAAC/gandalf-happy.gif" alt="Happy Gandalf">
+        <figcaption>You are logged</figcaption>
+    </figure>
+    <a href="close_session.php">Close Session</a>
+    <?php
+}
+?>
+</section>
+</body>
+</html>
